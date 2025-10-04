@@ -1,0 +1,15 @@
+.container {
+    width: 100%;
+    height: calc(100vh - 50px);
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 2px solid black;
+}

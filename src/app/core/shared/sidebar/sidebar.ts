@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './sidebar.scss'
 })
 export class Sidebar {
-
+  users: string[] = ['Max', 'Julian', 'Julia'];
 }
