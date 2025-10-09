@@ -9,9 +9,27 @@ form {
 
     input {
         width: 80%;
+        padding: 10px;
+        border-radius: 15px;
+        border: none;
+        background-color: blue;
     }
 
     button {
         width: 20%;
+        cursor: pointer;
+
+        &:hover {
+            box-shadow: inset 1px 1px 5px black;
+        }
     }
+}
+
+#messages {
+    position: absolute;
+    bottom: 35px;
+    top: 50px;
+    left: 200px;
+    right: 0;
+    background-color: green;
 }

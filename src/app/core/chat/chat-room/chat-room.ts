@@ -7,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrl: './chat-room.scss'
 })
 export class ChatRoom {
+  messages: string[] = [];
+
+ addMessage(message: string): void {
+  if (message.trim()) {
+    this.messages.push(message);
+  }
+}
 
 }

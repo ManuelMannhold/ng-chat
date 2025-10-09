@@ -26,4 +26,6 @@ router-outlet {
     width: calc(100% - 200px);
     height: calc(100vh - 50px);
     display: flex;
+    margin-left: 200px;
+    margin-top: 50px;
 }

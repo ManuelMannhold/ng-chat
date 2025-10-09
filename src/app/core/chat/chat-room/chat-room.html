@@ -1,8 +1,12 @@
 <div class="container">
-    <div id="messages"></div>
-    <form onsubmit="return false"> 
+    <div id="messages">
+        @for(message of messages; track message) {
+            {{message}}
+        }
+    </div>
+  <form (submit)="addMessage(input.value); input.value=''; $event.preventDefault()">
         <label for="input-message"></label>
-        <input type="text" id="input-message">
+        <input type="text" id="input-message" #input>
         <button id="send-message">Absenden</button>
     </form>
 </div>
