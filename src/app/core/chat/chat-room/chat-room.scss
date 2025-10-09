@@ -1,0 +1,17 @@
+
+form {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    margin-left: 200px;
+
+    input {
+        width: 80%;
+    }
+
+    button {
+        width: 20%;
+    }
+}

@@ -3,22 +3,27 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 app-header {
-    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
 }
 
  app-sidebar {
-        width: 20%;
+        position: absolute;
+        left: 0;
+        width: 200px;
+        top: 50px;
+        bottom: 0;
     }
 
-    router-outlet {
-        width: 80%;
-    }
-
-#content {
-    width: 100%;
+router-outlet {
+    width: calc(100% - 200px);
     height: calc(100vh - 50px);
     display: flex;
 }
