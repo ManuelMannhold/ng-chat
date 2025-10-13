@@ -3,6 +3,23 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: lightcyan;
+    background-color: burlywood;
     height: 100%;
+}
+
+.links-to-chat {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+        border-radius: 15px;
+        padding: 15px;
+        border: none;
+        outline: none;
+
+        &:hover {
+            cursor: pointer;
+            box-shadow: inset 1px 1px 5px black;
+        }
+    }
 }
