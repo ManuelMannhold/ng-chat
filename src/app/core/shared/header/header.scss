@@ -1,15 +1,19 @@
 .container{
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 100%;
     background-color: burlywood;
     height: 100%;
+    position: relative;
 }
 
 .links-to-chat {
     display: flex;
     justify-content: space-between;
+    padding-right: 10px;
+    gap: 10px;
+    position: absolute;
+    right: 0;
 
     button {
         border-radius: 15px;

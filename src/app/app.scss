@@ -11,21 +11,21 @@ app-header {
     top: 0;
     left: 0;
     right: 0;
-    height: 50px;
+    height: 100px;
 }
 
  app-sidebar {
         position: absolute;
         left: 0;
         width: 200px;
-        top: 50px;
+        top: 100px;
         bottom: 0;
     }
 
 router-outlet {
     width: calc(100% - 200px);
-    height: calc(100vh - 50px);
+    height: calc(100vh - 100px);
     display: flex;
     margin-left: 200px;
-    margin-top: 50px;
+    margin-top: 100px;
 }
