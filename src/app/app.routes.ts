@@ -5,6 +5,6 @@ import { PrivateChat } from './core/chat/private-chat/private-chat';
 
 export const routes: Routes = [
     { path: '', component: ChatRoom },
-    {path: '#chat', component: ChatRoom},
-    {path: '#private', component: PrivateChat}
+    {path: 'chat', component: ChatRoom},
+    {path: 'private', component: PrivateChat}
 ];
