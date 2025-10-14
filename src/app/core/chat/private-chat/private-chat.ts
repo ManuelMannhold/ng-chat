@@ -7,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './private-chat.scss'
 })
 export class PrivateChat {
+ messages: string[] = [];
 
+addMessage(message: string) {
+  if (message.trim()) {
+    this.messages.push(message);
+  }
+}
 }

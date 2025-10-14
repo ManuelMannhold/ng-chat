@@ -1,1 +1,14 @@
-<p>private-chat works!</p>
+<div class="container">
+  <div id="messages">
+    @for(message of messages; track message) {
+        <span>
+            {{message}}
+        </span>
+    }
+  </div>
+  <form (submit)="addMessage(input.value); input.value=''; $event.preventDefault()">
+    <label for="input-message"></label>
+    <input type="text" id="input-message" #input>
+    <button type="submit">Absenden</button>
+  </form>
+</div>
