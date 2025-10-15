@@ -1,14 +1,17 @@
-<div class="container">
-  <div id="messages">
+<main>
+  <section id="messages">
+    <header>
+      <h2>Allgemeiner Chat</h2>
+    </header>
     @for(message of messages; track message) {
-        <span>
-            {{message}}
-        </span>
+    <span>
+      {{ message }}
+    </span>
     }
-  </div>
-  <form (submit)="addMessage(input.value); input.value=''; $event.preventDefault()">
+  </section>
+  <form (submit)="addMessage(input.value); input.value = ''; $event.preventDefault()">
     <label for="input-message"></label>
-    <input type="text" id="input-message" #input>
+    <input type="text" id="input-message" #input />
     <button type="submit">Absenden</button>
   </form>
-</div>
+</main>
