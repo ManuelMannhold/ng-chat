@@ -49,11 +49,15 @@ form {
   background-color: lightcyan;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 5px;
 
   span {
     display: flex;
     justify-content: center;
-    border-bottom: 1px solid lightgrey;
+    width: 80%;
+    background-color: lightgrey;
+    border-radius: 15px;
+    padding: 5px;
   }
 }
