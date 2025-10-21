@@ -4,14 +4,14 @@ import { Component } from '@angular/core';
   selector: 'app-private-chat',
   imports: [],
   templateUrl: './private-chat.html',
-  styleUrl: './private-chat.scss'
+  styleUrl: './private-chat.scss',
 })
 export class PrivateChat {
- messages: string[] = [];
+  messagesPrivat: string[] = [];
 
-addMessage(message: string) {
-  if (message.trim()) {
-    this.messages.push(message);
+  addMessage(message: string) {
+    if (message.trim()) {
+      this.messagesPrivat.push(message);
+    }
   }
-}
 }
