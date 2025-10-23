@@ -22,4 +22,6 @@ export class ChatRoom {
   saveToLocalStorage() {
     this.storage.save('messages', this.messages);
   }
+
+  openUserInfo() {}
 }

@@ -10,9 +10,11 @@ header {
 form {
   position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: 10px;
+  right: 10px;
+  bottom: 5px;
   display: flex;
+  gap: 5px;
   margin-left: 200px;
 
   input {
@@ -54,15 +56,23 @@ form {
 
   span {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
     width: 80%;
     background-color: lightgrey;
     border-radius: 15px;
     padding: 5px;
+    position: relative;
+    height: 40px;
 
     .user-chat {
       font-weight: 800;
       width: 20%;
+      position: absolute;
+      left: 0;
+      height: 100%;
+      background-color: rgba(180, 180, 180, 0.9);
+      cursor: pointer;
     }
   }
 }
