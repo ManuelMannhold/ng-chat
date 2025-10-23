@@ -54,10 +54,15 @@ form {
 
   span {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     width: 80%;
     background-color: lightgrey;
     border-radius: 15px;
     padding: 5px;
+
+    .user-chat {
+      font-weight: 800;
+      width: 20%;
+    }
   }
 }

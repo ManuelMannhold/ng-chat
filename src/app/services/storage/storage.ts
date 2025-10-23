@@ -7,4 +7,11 @@ export class StorageService {
   save(key: string, value: any): void {
     localStorage.setItem(key, JSON.stringify(value));
   }
+
+  load(key: string) {
+    const userData = localStorage.getItem(key);
+    if (userData) {
+      const user = JSON.parse(userData);
+    }
+  }
 }

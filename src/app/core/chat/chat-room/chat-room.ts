@@ -10,6 +10,7 @@ import { StorageService } from '../../../services/storage/storage';
 export class ChatRoom {
   constructor(private storage: StorageService) {}
   messages: string[] = [];
+  user: string[] = ['Max', 'Sandra', 'Simon'];
 
   addMessage(message: string) {
     if (message.trim()) {
