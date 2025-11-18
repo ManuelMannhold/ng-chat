@@ -1,9 +1,11 @@
 import { Routes } from '@angular/router';
 import { ChatRoom } from './core/chat/chat-room/chat-room';
 import { PrivateChat } from './core/chat/private-chat/private-chat';
+import { Login } from './login/login';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/chat', pathMatch: 'full' },
+  { path: '', component: Login },
+  { path: 'toChat', component: ChatRoom, pathMatch: 'full' },
   { path: 'chat', component: ChatRoom },
   { path: 'private', component: PrivateChat },
 ];
