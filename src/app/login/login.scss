@@ -28,4 +28,9 @@ form {
   flex-direction: column;
   gap: 10px;
   text-align: center;
+
+  input {
+    padding: 5px;
+    border-radius: 15px;
+  }
 }
