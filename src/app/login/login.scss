@@ -30,7 +30,13 @@ form {
   text-align: center;
 
   input {
-    padding: 5px;
+    padding: 5px 40px;
     border-radius: 15px;
   }
+}
+
+button {
+  border-radius: 15px;
+  cursor: pointer;
+  padding: 5px 40px;
 }
