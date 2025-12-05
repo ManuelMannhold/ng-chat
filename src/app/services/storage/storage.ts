@@ -10,8 +10,6 @@ export class StorageService {
 
   load(key: string) {
     const userData = localStorage.getItem(key);
-    if (userData) {
-      const user = JSON.parse(userData);
+    return userData ? JSON.parse(userData) : [];
     }
   }
-}
