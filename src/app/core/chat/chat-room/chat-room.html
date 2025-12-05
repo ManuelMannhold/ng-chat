@@ -5,7 +5,7 @@
     </header>
     @for(message of messages; track message) {
     <span>
-      <span class="user-chat" (click)="openUserInfo()">{{ user[0] }}: </span>{{ message }}
+      <span class="user-chat" (click)="openUserInfo()">{{ user }}: </span>{{ message }}
     </span>
     }
   </section>

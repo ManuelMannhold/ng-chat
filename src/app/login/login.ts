@@ -23,5 +23,4 @@ export class Login {
 
   this.router.navigate(['/toChat']);
 }
-
 }
