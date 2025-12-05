@@ -1,20 +1,27 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { User } from '../services/user';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule],
+  standalone: true,
   templateUrl: './login.html',
-  styleUrl: './login.scss',
+  styleUrls: ['./login.scss'],
+  imports: [FormsModule] 
 })
+
 export class Login {
   username: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private user: User) {}
 
   submitName() {
-    if (!this.username.trim()) return;
-    this.router.navigate(['/toChat']);
-  }
+  if (!this.username.trim()) return;
+
+  this.user.username = this.username;
+
+  this.router.navigate(['/toChat']);
+}
+
 }
