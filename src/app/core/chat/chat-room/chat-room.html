@@ -17,6 +17,7 @@
   <div id="input-area">
     <form (submit)="addMessage(input.value); input.value = ''; $event.preventDefault()">
       <label for="input-message"></label>
+      
       <input type="text" id="input-message" #input autocomplete="off">
       <button type="submit">Absenden</button>
     </form>

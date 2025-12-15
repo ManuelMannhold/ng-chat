@@ -7,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './change-name.scss'
 })
 export class ChangeName {
+    newName: string = '';
 
+  changeName(newName: string): void {
+    
+    console.log('Name geändert!', newName);
+  }
+  
 }

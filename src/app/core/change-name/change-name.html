@@ -1,1 +1,8 @@
-<p>change-name works!</p>
+<section>
+    <form (submit)="changeName(newName.value); $event.preventDefault()">
+        <label for="input-name-change">
+            <input #newName type="text" placeholder="Neuer Name" autocomplete="off" id="input-name-change"/>
+            <button>Ändern</button>
+        </label>
+    </form>
+</section>
