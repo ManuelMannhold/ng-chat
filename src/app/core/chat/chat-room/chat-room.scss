@@ -26,16 +26,6 @@ form {
 
   button {
     width: 20%;
-    cursor: pointer;
-    outline: none;
-    border-radius: 15px;
-    border: none;
-    box-shadow: inset 0 0 5px black;
-
-    &:hover {
-      box-shadow: inset 1px 1px 10px black;
-      outline: none;
-    }
   }
 }
 
@@ -115,4 +105,10 @@ form {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media(max-width: 500px) {
+  button {
+    width: auto!important;
+  }
 }
