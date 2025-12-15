@@ -1,25 +1,24 @@
-<main>
-  <section id="messages" #messagesContainer>
-    <header>
-      <h2>Allgemeiner Chat</h2>
-    </header>
+<section id="messages" #messagesContainer>
+  <header>
+    <h2>Allgemeiner Chat</h2>
+  </header>
 
-    @for(message of messages; track message) {
-      <div class="@if(message.author === user) user-message @else bot-message">
-        
-        @if(message.text === '...' && message.author === 'Bot') {
-          <span class="bot-typing">{{ message.text }}</span>
-        }
-        @else {
-          <strong>{{ message.author }}:</strong> {{ message.text }}
-        }
-      </div>
+  @for(message of messages; track message) {
+  <div class="@if(message.author === user) user-message @else bot-message">
+
+    @if(message.text === '...' && message.author === 'Bot') {
+    <span class="bot-typing">{{ message.text }}</span>
     }
-  </section>
-
-  <form (submit)="addMessage(input.value); input.value = ''; $event.preventDefault()">
-    <label for="input-message"></label>
-    <input type="text" id="input-message" #input />
-    <button type="submit">Absenden</button>
-  </form>
-</main>
+    @else {
+    <strong>{{ message.author }}:</strong> {{ message.text }}
+    }
+  </div>
+  }
+  <div id="input-area">
+    <form (submit)="addMessage(input.value); input.value = ''; $event.preventDefault()">
+      <label for="input-message"></label>
+      <input type="text" id="input-message" #input autocomplete="off">
+      <button type="submit">Absenden</button>
+    </form>
+  </div>
+</section>
