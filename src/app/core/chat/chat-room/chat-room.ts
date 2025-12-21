@@ -15,7 +15,7 @@ import { BOT_REPLIES } from './bot-replies';
 })
 export class ChatRoom {
   @ViewChild('messagesContainer') messagesContainer!: ElementRef;
-  user = localStorage.getItem('chatUser') || 'Guest';
+  user: string = '';
   showNameModal = false;
   tempUserName = '';
 
@@ -25,8 +25,16 @@ export class ChatRoom {
   ) { }
 
   ngOnInit() {
-    this.user = this.userService.username;
+    this.user = this.storage.load('chatUser');
     this.loadFromLocalStorage();
+    this.sendWelcomeMessage();
+  }
+
+  sendWelcomeMessage() {
+      this.messages.push({
+    author: 'Bot',
+    text: `Hallo ${this.user} 👋`
+  });
   }
 
   openNameModal() {
@@ -89,9 +97,11 @@ export class ChatRoom {
 
   loadFromLocalStorage() {
     const storedMessages = this.storage.load('messages');
+    const storedUser = this.storage.load('chatUser');
 
-    if (Array.isArray(storedMessages)) {
+    if (Array.isArray(storedMessages && storedUser)) {
       this.messages = storedMessages;
+      this.user = storedUser
     } else {
       this.messages = [];
     }
@@ -106,7 +116,7 @@ export class ChatRoom {
     if (!this.tempUserName.trim()) return;
 
     this.user = this.tempUserName.trim();
-    localStorage.setItem('chatUser', this.user);
+    this.storage.save('chatUser', this.user);
     this.closeNameModal();
   }
 }
