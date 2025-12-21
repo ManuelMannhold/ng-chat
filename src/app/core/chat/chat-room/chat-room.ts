@@ -15,7 +15,9 @@ import { BOT_REPLIES } from './bot-replies';
 })
 export class ChatRoom {
   @ViewChild('messagesContainer') messagesContainer!: ElementRef;
-  user: string = '';
+  user = localStorage.getItem('chatUser') || 'Guest';
+  showNameModal = false;
+  tempUserName = '';
 
   constructor(
     private storage: StorageService,
@@ -25,6 +27,15 @@ export class ChatRoom {
   ngOnInit() {
     this.user = this.userService.username;
     this.loadFromLocalStorage();
+  }
+
+  openNameModal() {
+    this.tempUserName = this.user;
+    this.showNameModal = true;
+  }
+
+  closeNameModal() {
+    this.showNameModal = false;
   }
 
   messages: { text: string, author: string }[] = [];
@@ -89,5 +100,13 @@ export class ChatRoom {
 
   saveToLocalStorage() {
     this.storage.save('messages', this.messages);
+  }
+
+  saveName() {
+    if (!this.tempUserName.trim()) return;
+
+    this.user = this.tempUserName.trim();
+    localStorage.setItem('chatUser', this.user);
+    this.closeNameModal();
   }
 }

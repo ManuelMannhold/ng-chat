@@ -1,22 +1,52 @@
 <section id="messages" #messagesContainer>
-  <header>
+  <header class="chat-header">
     <h2>Allgemeiner Chat</h2>
+
+    <button
+      class="user-name-btn"
+      type="button"
+      (click)="openNameModal()"
+      title="Name ändern"
+    >
+      👤 {{ user }}
+    </button>
   </header>
 
   @for(message of messages; track message) {
-  <div class="@if(message.author === user) user-message @else bot-message">
-    @if(message.text === '...' && message.author === 'Bot') {
-    <span class="bot-typing">{{ message.text }}</span>
-    } @else {
-    <strong>{{ message.author }}:</strong> {{ message.text }}
-    }
-  </div>
+    <div class="@if(message.author === user) user-message @else bot-message">
+      @if(message.text === '...' && message.author === 'Bot') {
+        <span class="bot-typing">{{ message.text }}</span>
+      } @else {
+        <strong>{{ message.author }}:</strong> {{ message.text }}
+      }
+    </div>
   }
+
   <div id="input-area">
     <form (submit)="addMessage(input.value); input.value = ''; $event.preventDefault()">
-      <label for="input-message"></label>
       <input type="text" id="input-message" #input autocomplete="off" />
       <button type="submit">Absenden</button>
     </form>
   </div>
 </section>
+
+<!-- Modal -->
+@if(showNameModal) {
+  <div class="modal-backdrop" (click)="closeNameModal()"></div>
+
+  <div class="name-modal">
+    <h3>Name ändern</h3>
+
+    <input
+      type="text"
+      [(ngModel)]="tempUserName"
+      placeholder="Neuer Name"
+      (keyup.enter)="saveName()"
+    />
+
+    <div class="modal-actions">
+      <button (click)="closeNameModal()">Abbrechen</button>
+      <button class="primary" (click)="saveName()">Speichern</button>
+    </div>
+  </div>
+}
