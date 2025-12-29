@@ -114,5 +114,6 @@ export class ChatRoom {
     this.user = this.tempUserName.trim();
     this.storage.save('chatUser', this.user);
     this.closeNameModal();
+    this.sendWelcomeMessage();
   }
 }
