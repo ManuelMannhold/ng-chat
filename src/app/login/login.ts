@@ -9,22 +9,21 @@ import { StorageService } from '../services/storage/storage';
   standalone: true,
   templateUrl: './login.html',
   styleUrls: ['./login.scss'],
-  imports: [FormsModule]
+  imports: [FormsModule],
 })
-
 export class Login {
   username: string = '';
 
-  constructor(private router: Router, private user: User, private storage: StorageService) { }
+  constructor(private router: Router, private userService: User, private storage: StorageService) {}
 
   submitName() {
     if (!this.username.trim()) return;
-    this.user.username = this.username;
-    this.saveNameToLocalStorage()
+    this.userService.username = this.username;
+    this.saveNameToLocalStorage();
     this.router.navigate(['/toChat']);
   }
 
   saveNameToLocalStorage() {
-    this.storage.save('chatUser', this.user);
+    this.storage.save('chatUser', this.userService.username);
   }
 }

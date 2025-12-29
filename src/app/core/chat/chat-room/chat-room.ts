@@ -5,13 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { BOT_REPLIES } from './bot-replies';
 
-
 @Component({
   selector: 'app-chat-room',
   standalone: true,
   templateUrl: './chat-room.html',
   styleUrl: './chat-room.scss',
-  imports: [FormsModule, CommonModule]
+  imports: [FormsModule, CommonModule],
 })
 export class ChatRoom {
   @ViewChild('messagesContainer') messagesContainer!: ElementRef;
@@ -19,22 +18,20 @@ export class ChatRoom {
   showNameModal = false;
   tempUserName = '';
 
-  constructor(
-    private storage: StorageService,
-    private userService: User
-  ) { }
+  constructor(private storage: StorageService, private userService: User) {}
 
   ngOnInit() {
     this.user = this.storage.load('chatUser');
     this.loadFromLocalStorage();
     this.sendWelcomeMessage();
+    console.log(this.user);
   }
 
   sendWelcomeMessage() {
-      this.messages.push({
-    author: 'Bot',
-    text: `Hallo ${this.user} 👋`
-  });
+    this.messages.push({
+      author: 'Bot',
+      text: `Hallo ${this.user} 👋`,
+    });
   }
 
   openNameModal() {
@@ -46,7 +43,7 @@ export class ChatRoom {
     this.showNameModal = false;
   }
 
-  messages: { text: string, author: string }[] = [];
+  messages: { text: string; author: string }[] = [];
 
   addMessage(message: string) {
     if (!message.trim()) return;
@@ -63,7 +60,6 @@ export class ChatRoom {
 
     for (const key in BOT_REPLIES) {
       if (lowerMessage.includes(key)) {
-
         const thinkingMessage = { text: '...', author: 'Bot' };
         this.messages.push(thinkingMessage);
         this.saveToLocalStorage();
@@ -77,7 +73,6 @@ export class ChatRoom {
           if (index !== -1) {
             this.messages[index].text = reply;
           }
-
           this.saveToLocalStorage();
           this.scrollToBottom();
         }, 1500);
@@ -90,7 +85,8 @@ export class ChatRoom {
   scrollToBottom() {
     setTimeout(() => {
       if (this.messagesContainer) {
-        this.messagesContainer.nativeElement.scrollTop = this.messagesContainer.nativeElement.scrollHeight;
+        this.messagesContainer.nativeElement.scrollTop =
+          this.messagesContainer.nativeElement.scrollHeight;
       }
     }, 50);
   }
@@ -101,7 +97,7 @@ export class ChatRoom {
 
     if (Array.isArray(storedMessages && storedUser)) {
       this.messages = storedMessages;
-      this.user = storedUser
+      this.user = storedUser;
     } else {
       this.messages = [];
     }
