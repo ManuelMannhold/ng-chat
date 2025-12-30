@@ -84,6 +84,10 @@ form {
   animation: blink 2s infinite;
 }
 
+.bot-typing::before {
+  content: '...';
+}
+
 @keyframes blink {
   0%,
   50%,
@@ -160,15 +164,13 @@ form {
   border-radius: 6px;
 }
 
-
 @media (max-width: 500px) {
   button {
     width: auto !important;
   }
 }
 
-@media(max-width: 480px) {
-  
+@media (max-width: 480px) {
   .bot-message {
     max-width: none;
   }
