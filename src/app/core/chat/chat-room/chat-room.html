@@ -25,3 +25,21 @@
     </form>
   </div>
 </section>
+
+<!-- Modal -->
+@if(showNameModal) {
+<div class="modal-backdrop" (click)="closeNameModal()"></div>
+<div class="name-modal">
+  <h3>Name ändern</h3>
+  <input
+    type="text"
+    [(ngModel)]="tempUserName"
+    placeholder="Neuer Name"
+    (keyup.enter)="saveName()"
+  />
+  <div class="modal-actions">
+    <button (click)="closeNameModal()">Abbrechen</button>
+    <button class="primary" (click)="saveName()">Speichern</button>
+  </div>
+</div>
+}
