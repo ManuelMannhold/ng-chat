@@ -1,5 +1,5 @@
 <section class="chat-wrapper">
-  <div id="messages" #messagesContainer>
+  <div id="messages">
     <header class="chat-header">
       <h2>Allgemeiner Chat</h2>
 
@@ -7,15 +7,19 @@
         👤 {{ user }}
       </button>
     </header>
-    @for (message of messages; track message) {
-    <div class="message" [ngClass]="message.author === user ? 'user-message' : 'bot-message'">
-      @if (message.text === '...' && message.author === 'Bot') {
-      <div class="bot-typing">Bot tippt…</div>
-      } @else {
-      <strong><legend>{{ message.author }}</legend></strong> {{ message.text }}
+    <div class="message-wrapper"  #messagesContainer>
+      @for (message of messages; track message) {
+      <div class="message" [ngClass]="message.author === user ? 'user-message' : 'bot-message'">
+        @if (message.text === '...' && message.author === 'Bot') {
+        <div class="bot-typing">Bot tippt…</div>
+        } @else {
+        <strong>
+          <legend id="user-bot-name">{{ message.author }}</legend>
+        </strong> {{ message.text }}
+        }
+      </div>
       }
     </div>
-    }
   </div>
 
   <div id="input-area">
@@ -31,12 +35,7 @@
 <div class="modal-backdrop" (click)="closeNameModal()"></div>
 <div class="name-modal">
   <h3>Name ändern</h3>
-  <input
-    type="text"
-    [(ngModel)]="tempUserName"
-    placeholder="Neuer Name"
-    (keyup.enter)="saveName()"
-  />
+  <input type="text" [(ngModel)]="tempUserName" placeholder="Neuer Name" (keyup.enter)="saveName()" />
   <div class="modal-actions">
     <button (click)="closeNameModal()">Abbrechen</button>
     <button class="primary" (click)="saveName()">Speichern</button>

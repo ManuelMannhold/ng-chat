@@ -15,8 +15,9 @@ import { BOT_REPLIES } from './bot-replies';
 export class ChatRoom {
   @ViewChild('messagesContainer') messagesContainer!: ElementRef;
   user: string = '';
-  showNameModal = false;
-  tempUserName = '';
+  showNameModal: boolean = false;
+  tempUserName: string = '';
+  messages: { text: string; author: string }[] = [];
 
   constructor(private storage: StorageService, private userService: User) {}
 
@@ -43,15 +44,12 @@ export class ChatRoom {
     this.showNameModal = false;
   }
 
-  messages: { text: string; author: string }[] = [];
-
   addMessage(message: string) {
     if (!message.trim()) return;
 
     this.messages.push({ text: message, author: this.user });
     this.saveToLocalStorage();
     this.scrollToBottom();
-
     this.checkForAnswer(message);
   }
 
