@@ -9,7 +9,7 @@ import { BOT_REPLIES } from './bot-replies';
   selector: 'app-chat-room',
   standalone: true,
   templateUrl: './chat-room.html',
-  styleUrl: './chat-room.scss',
+  styleUrls: ['./chat-room.scss', './media.scss'],
   imports: [FormsModule, CommonModule],
 })
 export class ChatRoom {

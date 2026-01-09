@@ -140,7 +140,6 @@ form {
   width: 100%;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.7);
   padding: 12px;
-  z-index: 4;
 }
 
 legend {
@@ -206,20 +205,4 @@ legend {
   border: none;
   padding: 6px 12px;
   border-radius: 6px;
-}
-
-@media (max-width: 500px) {
-  button {
-    width: auto !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .bot-message {
-    max-width: none;
-  }
-
-  .user-message {
-    width: 100%;
-  }
 }

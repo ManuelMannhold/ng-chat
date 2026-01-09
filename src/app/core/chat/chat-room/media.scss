@@ -1,0 +1,32 @@
+@media(max-width: 600px) {
+  #messages {
+    width: 95%;
+  }
+
+  .bot-messaege, .user-message {
+    max-width: 85%;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  #input-area {
+    padding: 5px;
+  }
+}
+
+
+@media (max-width: 500px) {
+  button {
+    width: auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .bot-message {
+    max-width: none;
+  }
+
+  .user-message {
+    width: 100%;
+  }
+}
