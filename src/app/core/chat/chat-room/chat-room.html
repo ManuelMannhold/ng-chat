@@ -12,7 +12,7 @@
       @if (message.text === '...' && message.author === 'Bot') {
       <div class="bot-typing">Bot tippt…</div>
       } @else {
-      <strong>{{ message.author }}:</strong> {{ message.text }}
+      <strong><legend>{{ message.author }}</legend></strong> {{ message.text }}
       }
     </div>
     }
@@ -21,7 +21,7 @@
   <div id="input-area">
     <form (submit)="addMessage(input.value); input.value = ''; $event.preventDefault()">
       <input type="text" #input autocomplete="off" />
-      <button type="submit">➤</button>
+      <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
     </form>
   </div>
 </section>
