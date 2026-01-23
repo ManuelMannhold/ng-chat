@@ -3,21 +3,14 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    position: relative;
+    justify-content: center;
+    align-content: center;
 }
 
-app-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
+app-chat-room {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-
- app-sidebar {
-        position: absolute;
-        left: 0;
-        width: 200px;
-        top: 100px;
-        bottom: 0;
-    }

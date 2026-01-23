@@ -6,6 +6,5 @@ import { ChangeName } from './core/change-name/change-name';
 export const routes: Routes = [
   { path: '', component: Login },
   { path: 'toChat', component: ChatRoom, pathMatch: 'full' },
-  { path: 'chat', component: ChatRoom },
   {path: 'change-name', component: ChangeName }
 ];

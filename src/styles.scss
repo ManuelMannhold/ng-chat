@@ -4,9 +4,29 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-display: swap; 
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/inter-v20-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap; 
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/plus-jakarta-sans-v12-latin-regular.woff2') format('woff2');
+}
+
+:root {
+  --main-font: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background-color: rgb(139, 193, 211);
+  font-family: var(--main-font);
+  background-color: rgb(203, 234, 244);
 }
 
 button {
